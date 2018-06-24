@@ -1,6 +1,6 @@
 // GLOBAL VARIABLES
 // ===========================================================
-var things = ["cat", "dog", "r2d2", "wrx"]
+var emotions = ["lost", "tired", "confused", "frustrated", "mind blown",]
 
 
 
@@ -12,11 +12,13 @@ var things = ["cat", "dog", "r2d2", "wrx"]
 function renderButtons() {
     $("#button-view").empty();
 
-    for (var i=0; i<things.length; i++){
+    for (var i=0; i<emotions.length; i++){
         var a = $("<button>");
         a.addClass("something-button");
-        a.attr("data-name",things[i]);
-        a.text(things[i]);
+        a.attr("data-name",emotions[i]);
+        a.attr("class","btn btn-default");
+        a.attr("type","button");
+        a.text(emotions[i]);
         $("#button-view").append(a);
     }
 }
@@ -41,10 +43,10 @@ function displayGIFS () {
             var rating = results[i].rating;
             var p = $("<p>").text("Rating: " + rating);
             var thingImage = $("<img>");
-            thingImage.attr("src", results[i].images.fixed_height.url);
+            thingImage.attr("src", results[i].images.fixed_height_still.url);
             thingImage.attr("data-still", results[i].images.fixed_height_still.url);
             thingImage.attr("data-animate", results[i].images.fixed_height.url);
-            thingImage.attr("data-state", "animate");
+            thingImage.attr("data-state", "still");
             thingImage.attr("class", "gif");
             
             // TESTING
@@ -69,7 +71,7 @@ renderButtons();
 $("#add-something").on("click", function(event) {
     event.preventDefault();
     var newThing = $("#something-input").val().trim();
-    things.push(newThing);
+    emotions.push(newThing);
     renderButtons();
     $("#something-input").val("");
 });

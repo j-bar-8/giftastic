@@ -4,17 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Giftastic!</title>
 </head>
 <body>  
-    <div class="container">
-        <div id="button-view"></div>
-            <form id="something-form">
-                <label for="something-input">Add a little Sumthin Sumthin</label>
+    <div class="container py-3 mt-3">
+        <div class="row">
+            <div id="button-view" class="col-md-12 btn-group btn-group-lg" role="group"></div>
+        </div>
+
+        <br>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <form id="something-form">
+                <label for="something-input">How are you feeling?!?</label>
                 <input type="text" id="something-input">
                 <input id="add-something" type="submit" value="Add something">
-            </form>
-        <div id="something-view"></div>
+                </form>
+            </div>
+        </div>
+
+        <br>
+        
+        <div class="row">
+            <div class="col-md-12" id="something-view"></div>
+        </div>
     </div>
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
